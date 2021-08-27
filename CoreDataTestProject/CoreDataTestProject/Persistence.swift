@@ -1,6 +1,6 @@
 //
 //  Persistence.swift
-//  Core Data MVVM
+//  CoreDataTestProject
 //
 //  Created by Nur Irfan Pangestu on 26/08/21.
 //
@@ -14,8 +14,7 @@ struct PersistenceController {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
         for _ in 0..<10 {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
+            _ = Item(name: "name", context: viewContext)
         }
         do {
             try viewContext.save()
@@ -27,11 +26,15 @@ struct PersistenceController {
         }
         return result
     }()
+    
+    static var empty: PersistenceController = {
+        PersistenceController(inMemory: true)
+    }()
 
     let container: NSPersistentContainer
 
     init(inMemory: Bool = false) {
-        container = NSPersistentContainer(name: "Core_Data_MVVM")
+        container = NSPersistentContainer(name: "CoreDataTestProject")
         if inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
         }
@@ -52,4 +55,30 @@ struct PersistenceController {
             }
         })
     }
+    
+    func save() {
+        let viewContext = container.viewContext
+        do {
+            try viewContext.save()
+        } catch {
+            // Replace this implementation with code to handle the error appropriately.
+            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
+    }
+    
+    func delete() {
+        let viewContext = container.viewContext
+        do {
+            try viewContext.save()
+        } catch {
+            // Replace this implementation with code to handle the error appropriately.
+            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
+    }
+    
+    
 }

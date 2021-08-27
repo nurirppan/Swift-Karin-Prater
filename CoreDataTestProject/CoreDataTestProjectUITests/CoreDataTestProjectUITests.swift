@@ -1,13 +1,13 @@
 //
-//  Core_Data_MVVMUITests.swift
-//  Core Data MVVMUITests
+//  CoreDataTestProjectUITests.swift
+//  CoreDataTestProjectUITests
 //
 //  Created by Nur Irfan Pangestu on 26/08/21.
 //
 
 import XCTest
 
-class Core_Data_MVVMUITests: XCTestCase {
+class CoreDataTestProjectUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
