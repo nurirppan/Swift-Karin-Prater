@@ -2,7 +2,7 @@
 //  SlipboxAppUITests.swift
 //  SlipboxAppUITests
 //
-//  Created by Nur Irfan Pangestu on 28/08/21.
+//  Created by Karin Prater on 02.12.20.
 //
 
 import XCTest
@@ -32,7 +32,7 @@ class SlipboxAppUITests: XCTestCase {
     }
 
     func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
+        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
             // This measures how long it takes to launch your application.
             measure(metrics: [XCTApplicationLaunchMetric()]) {
                 XCUIApplication().launch()

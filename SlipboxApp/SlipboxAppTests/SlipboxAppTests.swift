@@ -2,11 +2,11 @@
 //  SlipboxAppTests.swift
 //  SlipboxAppTests
 //
-//  Created by Nur Irfan Pangestu on 28/08/21.
+//  Created by Karin Prater on 02.12.20.
 //
 
 import XCTest
-@testable import SlipboxApp
+//@testable import SlipboxApp
 
 class SlipboxAppTests: XCTestCase {
 
